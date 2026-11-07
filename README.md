@@ -39,4 +39,6 @@ Los secretos son valores sensibles (tokens, contraseñas, claves de API) que se 
 
 ### 5. Reflexión
 
-_PENDIENTE_
+1. **Automatizar las pruebas en cada `push` y en cada pull request.** En mis proyectos suelo correr las pruebas a mano y a veces se me olvida antes de subir cambios. Con un workflow que ejecute `pytest` en cada `push` y en cada pull request, los errores se detectarían en minutos y en un entorno limpio (el runner), no en mi computadora, donde puede haber dependencias instaladas que ocultan problemas.
+
+2. **Revisar el estilo y la seguridad del código antes de integrarlo.** Agregaría pasos que ejecuten un linter (por ejemplo `ruff`) y un análisis de seguridad como `github/codeql-action`. Así el código sigue un estilo consistente y se detectan vulnerabilidades o secretos expuestos antes de que lleguen a `main`, lo que ahorra revisiones manuales y reduce riesgos en un repositorio público.
